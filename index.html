@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#211612">
+  <title>Chithi Studio — Your Words, Beautifully Delivered</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="glow glow-a"></div><div class="glow glow-b"></div>
+  <header class="site-header">
+    <a class="brand" href="#"><span class="brand-icon">✉</span><span>chithi<span class="brand-dot">.</span><small>YOUR WORDS, BEAUTIFULLY DELIVERED</small></span></a>
+    <span class="header-note">A LITTLE SPACE FOR BIG FEELINGS</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span></span> THE ART OF WRITING AGAIN <span></span></div>
+      <h1>Some words deserve<br><em>a beautiful letter.</em></h1>
+      <p class="hero-bn">মনের কথা লিখুন, সুন্দরভাবে পৌঁছে দিন।</p>
+      <p class="hero-desc">Choose a letter style, write your thoughts, and turn them into a lovely digital letter.</p>
+    </section>
+
+    <section class="workspace">
+      <div class="section-heading">
+        <div><span class="step">01</span><h2>Choose your letter</h2></div>
+        <p>যখন যেটা প্রয়োজন, সেটাই বেছে নিন</p>
+      </div>
+      <div class="category-grid" id="categoryGrid">
+        <button class="category-card active" data-category="personal"><span class="cat-icon">📝</span><strong>Personal Letter</strong><small>ব্যক্তিগত চিঠি</small><span class="cat-arrow">↗</span></button>
+        <button class="category-card" data-category="love"><span class="cat-icon">♡</span><strong>Love Letter</strong><small>ভালোবাসার চিঠি</small><span class="cat-arrow">↗</span></button>
+        <button class="category-card" data-category="invitation"><span class="cat-icon">✧</span><strong>Invitation Letter</strong><small>আমন্ত্রণপত্র</small><span class="cat-arrow">↗</span></button>
+        <button class="category-card" data-category="birthday"><span class="cat-icon">🎂</span><strong>Birthday Letter</strong><small>জন্মদিনের শুভেচ্ছা</small><span class="cat-arrow">↗</span></button>
+        <button class="category-card" data-category="thanks"><span class="cat-icon">❀</span><strong>Thank You Letter</strong><small>কৃতজ্ঞতার চিঠি</small><span class="cat-arrow">↗</span></button>
+        <button class="category-card" data-category="apology"><span class="cat-icon">☁</span><strong>Apology Letter</strong><small>ক্ষমা চাওয়ার চিঠি</small><span class="cat-arrow">↗</span></button>
+        <button class="category-card" data-category="friendship"><span class="cat-icon">☀</span><strong>Friendship Letter</strong><small>বন্ধুত্বের চিঠি</small><span class="cat-arrow">↗</span></button>
+        <button class="category-card" data-category="custom"><span class="cat-icon">✎</span><strong>Custom Letter</strong><small>নিজের মতো চিঠি</small><span class="cat-arrow">↗</span></button>
+      </div>
+
+      <div class="editor-layout">
+        <section class="editor panel">
+          <div class="panel-title"><span class="step">02</span><div><h2>Write your letter</h2><p id="categoryHint">A personal note to someone special.</p></div></div>
+          <form id="letterForm">
+            <div class="field-row">
+              <div class="field"><label for="toName">To / প্রাপক</label><input id="toName" placeholder="যার জন্য লিখছেন" maxlength="70"></div>
+              <div class="field"><label for="fromName">From / প্রেরক</label><input id="fromName" placeholder="আপনার নাম" maxlength="70"></div>
+            </div>
+            <div class="field"><label for="subject">Subject / বিষয়</label><input id="subject" maxlength="100" placeholder="চিঠির বিষয়"></div>
+            <div class="field"><label for="greeting">Greeting / সম্বোধন</label><input id="greeting" maxlength="100" placeholder="প্রিয় ..."></div>
+            <div class="field"><label for="message">Your message / আপনার লেখা</label><textarea id="message" rows="8" maxlength="2500" placeholder="এখানে আপনার মনের কথাগুলো লিখুন..."></textarea><div class="char-count"><span id="charCount">0</span>/2500</div></div>
+            <div class="field"><label for="closing">Closing / শেষের কথা</label><input id="closing" maxlength="100" placeholder="ইতি,"></div>
+            <div class="field"><label for="theme">Letter appearance / ডিজাইন</label><select id="theme"><option value="classic">Classic cream</option><option value="rose">Rose romance</option><option value="midnight">Midnight gold</option><option value="garden">Garden green</option></select></div>
+            <div class="editor-actions"><button type="button" class="btn secondary" id="resetBtn">Reset</button><button type="button" class="btn primary" id="previewBtn">Create my letter <span>↗</span></button></div>
+          </form>
+        </section>
+
+        <section class="preview-area">
+          <div class="preview-heading"><div><span class="step">03</span><h2>Your letter preview</h2></div><span class="live-pill"><i></i> LIVE PREVIEW</span></div>
+          <div class="letter-stage" id="letterStage">
+            <div class="envelope" id="envelope">
+              <div class="env-back"></div><div class="letter-paper" id="letterPaper"><div class="paper-top">✦ &nbsp; WITH WARMTH &nbsp; ✦</div><div class="paper-content"><p class="paper-to" id="previewTo">প্রিয় মানুষ,</p><h3 id="previewSubject">A note from the heart</h3><p class="paper-message" id="previewMessage">আপনার মনের কথাগুলো এখানে দেখা যাবে। বাম পাশের ফর্মে লিখতে শুরু করুন।</p><p class="paper-closing" id="previewClosing">ইতি,<br><span id="previewFrom">আপনার নাম</span></p></div><div class="paper-bottom">MADE WITH CARE · CHITHI STUDIO</div></div>
+              <div class="env-left"></div><div class="env-right"></div><div class="env-bottom"></div><div class="env-flap"></div><div class="wax">C</div>
+            </div>
+          </div>
+          <p class="preview-tip">Your letter updates as you type. Click “Open letter” to see it.</p>
+          <button class="btn primary open-letter" id="openLetterBtn">Open letter <span>♡</span></button>
+          <div class="share-actions" id="shareActions">
+            <button class="btn secondary" id="copyBtn">Copy text</button>
+            <button class="btn secondary" id="downloadBtn">Download .txt</button>
+            <button class="btn whatsapp" id="whatsappBtn">Share on WhatsApp ↗</button>
+          </div>
+          <p class="status" id="status" aria-live="polite"></p>
+        </section>
+      </div>
+    </section>
+    <footer><div class="footer-mark">✉</div><p>EVERY LETTER HOLDS A LITTLE PIECE OF YOU.</p><span>চিঠি — শব্দের চেয়েও একটু বেশি।</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
